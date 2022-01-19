@@ -42,11 +42,11 @@ public class TimelineAdapter extends BaseAdapter {
         //시간 텍스트 표시하는 view 객체 생성
         TextView timeText = (TextView) v.findViewById(R.id.time);
         //일정내용 텍스트 표시하는 view 객체 생성
-        TextView scheduleText = (TextView) v.findViewById(R.id.schedule);
+//        TextView scheduleText = (TextView) v.findViewById(R.id.schedule);
 
         //객체값들을 리스트에 저장
         timeText.setText(timelineList.get(i).getTime());
-        scheduleText.setText(timelineList.get(i).getSchedule());
+//        scheduleText.setText(timelineList.get(i).getSchedule());
 
         //v의 태그(고유 이름) 설정
         v.setTag(timelineList.get(i).getTime());

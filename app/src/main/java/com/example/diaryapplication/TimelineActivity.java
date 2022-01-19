@@ -37,16 +37,16 @@ public class TimelineActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
         
-        //편집 버튼 아이디 찾기
-        btn_edit = findViewById(R.id.btn_edit);
-        //편집 버튼 눌렀을 때 편집 화면으로 전환하게 하기
-        btn_edit = setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TimelineActivity.this, EditTimeline.class);
-                startActivity(intent); //EditTimeLine Activity로 이동
-            }
-        });
+//        //편집 버튼 아이디 찾기
+//        btn_edit = findViewById(R.id.btn_edit);
+//        //편집 버튼 눌렀을 때 편집 화면으로 전환하게 하기
+//        btn_edit = setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(TimelineActivity.this, EditTimeline.class);
+//                startActivity(intent); //EditTimeLine Activity로 이동
+//            }
+//        });
 
 
     }
