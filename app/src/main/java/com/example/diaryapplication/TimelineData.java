@@ -9,10 +9,12 @@ public class TimelineData {
     String schedule;
     
     //생성자 생성
+    /*
     public TimelineData(String time, String schedule) {
         this.time = time;
         this.schedule = schedule;
     }
+*/
 
     //시간 얻기
     public String getTime() {
