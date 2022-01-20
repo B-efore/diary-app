@@ -1,4 +1,4 @@
-package com.example.diaryapplication;
+package com.example.diaryapplication.database;
 
 public class UserDB {
 

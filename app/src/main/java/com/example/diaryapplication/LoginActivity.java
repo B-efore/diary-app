@@ -1,20 +1,17 @@
 package com.example.diaryapplication;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.diaryapplication.database.UserDB;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -109,7 +106,7 @@ public class LoginActivity extends AppCompatActivity {
                 mUser.setName(strName);
                 mUser.setMessage(strMessage);
 
-                mDatabase.child("users").child(firebaseUser.getUid()).setValue(mUser);
+                mDatabase.child("users").child(firebaseUser.getUid()).child("info").setValue(mUser);
 
                 Intent registerIntent = new Intent(LoginActivity.this, TabActivity.class);
                 startActivity(registerIntent);
