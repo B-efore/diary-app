@@ -55,10 +55,9 @@ public class TimelineAdapter extends BaseAdapter {
         //일정 삭제 버튼
         Button btn_delete = (Button)view.findViewById(R.id.btn_delete);
 
-
         //가져온 데이터를 텍스트 뷰에 저장
         timeText.setText(timelineList.get(i).getTime());
-        scheduleText.setText(timelineList.get(i).getSchedule());
+//        scheduleText.setText(timelineList.get(i).getSchedule());
 
         //리스트 아이템 삭제
         btn_delete.setOnClickListener(new View.OnClickListener() {
