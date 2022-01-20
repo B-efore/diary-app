@@ -43,12 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
     
-    //타임라인 리스트뷰 변수 선언
-    private ListView timelineListView;
-    //타임라인 어뎁터 선언
-    private TimelineAdapter timelineAdapter;
-    //타임라인 데이터를 담는 리스트 선언
-    private List<TimelineData> timelineList;
+
 
     SignInButton signBtn;
 
@@ -57,14 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
   
-        //타임라인 리스트뷰 초기화 (아이디 이름은 수정예정)
-        timelineListView = (ListView) findViewById(R.id.timelineListView);
-        //타임라인 리스트 초기화
-        timelineList = new ArrayList<TimelineData>();
-        //어뎁터에 타임라인 리스트 내용 넣어주기
-        timelineAdapter = new TimelineAdapter(getApplicationContext().timelineList);
-        //타임라인 리스트뷰에 어뎁터 연결
-        timelineListView.setAdapter(timelineAdapter);
+
 
         signBtn = findViewById(R.id.sign_in_button);
         signBtn.setOnClickListener(this);
