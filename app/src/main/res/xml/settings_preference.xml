@@ -1,4 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <PreferenceCategory android:title="내 정보">
+        <PreferenceScreen
+            android:key="name"
+            android:title="이름"
+            android:summary="email"/>
+
+        <PreferenceScreen
+            android:key="init"
+            android:title="초기화"/>
+
+        <PreferenceScreen
+            android:key="logout"
+            android:title="로그아웃"/>
+
+        <PreferenceScreen
+            android:key="withdraw"
+            android:title="탈퇴하기"/>
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="테마">
+        <ListPreference
+            android:key="theme"
+            android:title="테마 설정"
+            android:defaultValue="t1"
+            android:entries="@array/theme"
+            android:entryValues="@array/theme_value"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="알림">
+        <SwitchPreference
+            android:key="alarm"
+            android:title="알림 설정 On/Off"
+            android:defaultValue="false"/>
+
+        <Preference
+            android:key="al"
+            android:title="알림 시간 설정"
+            android:dependency="alarm"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="잠금화면">
+        <SwitchPreference
+            android:key="lock"
+            android:title="잠금화면 설정 On/Off"
+            android:defaultValue="false"/>
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

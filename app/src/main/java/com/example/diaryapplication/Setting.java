@@ -1,5 +1,6 @@
 package com.example.diaryapplication;
 
+
 import android.app.AlarmManager;
 import android.app.Dialog;
 import android.app.Notification;
@@ -10,6 +11,10 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+
+import androidx.appcompat.app.AppCompatActivity;
+import com.example.diaryapplication.R;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;

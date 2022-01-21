@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="theme">
+        <item>테마 1</item>
+        <item>테마 2</item>
+    </string-array>
+    <string-array name="theme_value">
+        <item>th1</item>
+        <item>th2</item>
+    </string-array>
 </resources>
