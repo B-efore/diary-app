@@ -1,7 +1,7 @@
 package com.example.diaryapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.diaryapplication.R;
 import android.os.Bundle;
 
 public class Setting extends AppCompatActivity {
