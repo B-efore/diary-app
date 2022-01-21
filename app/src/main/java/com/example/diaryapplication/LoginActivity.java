@@ -1,10 +1,5 @@
 package com.example.diaryapplication;
 
-<<<<<<< HEAD
-import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-=======
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -15,7 +10,6 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
->>>>>>> 78cfe5f92c1cb2a70fceaaa49682205f71c1e959
 
 import com.example.diaryapplication.database.UserDB;
 import com.google.firebase.auth.FirebaseAuth;

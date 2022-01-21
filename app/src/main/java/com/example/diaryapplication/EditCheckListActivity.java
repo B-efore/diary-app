@@ -57,7 +57,7 @@ public class EditCheckListActivity extends AppCompatActivity {
 //                mUserTodo.setCompleted(false);
 //
 //                //DB에 저장
-//                mDatabase.child("users").child(firebaseUser.getUid()).child("todo").setValue(mUserTodo);
+//                mDatabase.child("users").child(firebaseUser.getUid()).child("1todo").setValue(mUserTodo);
 //
 //            }
 //        });

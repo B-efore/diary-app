@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
-
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 import static android.view.View.INVISIBLE;
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
@@ -53,7 +51,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final int RC_SIGN_IN = 9001;
 
@@ -65,26 +63,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText userName, userMessage;
 
     Dialog login_dialog;
-    
-
-
     SignInButton signBtn;
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 78cfe5f92c1cb2a70fceaaa49682205f71c1e959
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-<<<<<<< HEAD
 
-
-=======
-  
->>>>>>> 78cfe5f92c1cb2a70fceaaa49682205f71c1e959
         signBtn = findViewById(R.id.sign_in_button);
         signBtn.setOnClickListener(this);
 
@@ -102,9 +87,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onClick(View view)
-    {
-        switch (view.getId()){
+    public void onClick(View view) {
+        switch (view.getId()) {
             case R.id.sign_in_button:
                 signIn();
                 break;
@@ -120,14 +104,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     //로그인 상태에 따라 UI 변경
-    private void updateUI(FirebaseUser user){
-        if (user==null){
+    private void updateUI(FirebaseUser user) {
+        if (user == null) {
 //            Toast.makeText(this.getApplicationContext(), "로그인 실패...", Toast.LENGTH_SHORT).show();
             signBtn.setVisibility(View.VISIBLE);
 
-        }
-        else
-        {
+        } else {
 //            Toast.makeText(this.getApplicationContext(), "로그인 성공...", Toast.LENGTH_SHORT).show();
             signBtn.setVisibility(View.INVISIBLE);
 

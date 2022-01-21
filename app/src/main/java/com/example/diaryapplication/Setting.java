@@ -30,36 +30,31 @@ import java.util.Calendar;
 public class Setting extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener{
 
 
-
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
-        Button button_time=(Button) findViewById(R.id.button_time);
-
-
-        button_time.setOnClickListener(new View.OnClickListener(){
-            @Override
-                    public void onClick(View v){
-                DialogFragment timePicker= new TimePickerFragment();
-                timePicker.show(getSupportFragmentManager(),"time picker");
-
-            }//버튼
-        });
-
-
+//        Button button_time=(Button) findViewById(R.id.button_time);
+//        button_time.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//                    public void onClick(View v){
+//                DialogFragment timePicker= new TimePickerFragment();
+//                timePicker.show(getSupportFragmentManager(),"time picker");
+//
+//            }//버튼
+//        });
     }
 
-    @Override
-    public void OnTimeSet(TimePicker view,int hour,int minute){
-        Calendar c= Calendar.getInstance();
-        c.set(Calendar.HOUR,hour);
-        c.set(Calendar.MINUTE,minute);
-
-        startAlarm(c);
-    }
+//    @Override
+//    public void OnTimeSet(TimePicker view,int hour,int minute){
+//        Calendar c= Calendar.getInstance();
+//        c.set(Calendar.HOUR,hour);
+//        c.set(Calendar.MINUTE,minute);
+//
+//        startAlarm(c);
+//    }
 
 
 
