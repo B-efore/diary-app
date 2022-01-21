@@ -1,16 +1,20 @@
 package com.example.diaryapplication;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+import static android.view.View.INVISIBLE;
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -36,19 +40,26 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private static final int RC_SIGN_IN = 9001;
+
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
+
+    private Button registerBtn;
+    private EditText userName, userMessage;
+
+    Dialog login_dialog;
     
-    //타임라인 리스트뷰 변수 선언
-    private ListView timelineListView;
-    //타임라인 어뎁터 선언
-    private TimelineAdapter timelineAdapter;
-    //타임라인 데이터를 담는 리스트 선언
-    private List<TimelineData> timelineList;
+
 
     SignInButton signBtn;
 
@@ -57,15 +68,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
   
-        //타임라인 리스트뷰 초기화 (아이디 이름은 수정예정)
-        timelineListView = (ListView) findViewById(R.id.timelineListView);
-        //타임라인 리스트 초기화
-        timelineList = new ArrayList<TimelineData>();
-        //어뎁터에 타임라인 리스트 내용 넣어주기
-        timelineAdapter = new TimelineAdapter(getApplicationContext().timelineList);
-        //타임라인 리스트뷰에 어뎁터 연결
-        timelineListView.setAdapter(timelineAdapter);
-
         signBtn = findViewById(R.id.sign_in_button);
         signBtn.setOnClickListener(this);
 
@@ -76,7 +78,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
+
+        Log.d("Test", "리턴값");
     }
 
     @Override
@@ -106,12 +111,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else
         {
-            //만약 최초 로그인이라면 LoginActivity로, 아니라면 MainCalendar로 이동하게 한다
-            Toast.makeText(this.getApplicationContext(), "환영합니다!", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this.getApplicationContext(), "로그인 성공...", Toast.LENGTH_SHORT).show();
             signBtn.setVisibility(View.INVISIBLE);
 
-            startActivity(new Intent(getApplicationContext(), MainCalendar.class));
+            startActivity(new Intent(getApplicationContext(), TabActivity.class));
             finish();
+
+//            mDatabase.child("users").child(user.getUid()).get();
+//            Log.d("Test", "리턴값" + mDatabase.child("users").child(user.getUid()).get());
         }
     }
 
@@ -149,8 +156,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             //로그인 성공 시, 유저 정보와 함께 UI 업데이트
                             Log.d(TAG, "signInWithCredential:success");
 
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+//                            FirebaseUser user = mAuth.getCurrentUser();
+//                            updateUI(user);
+
+                            Intent registerIntent = new Intent(MainActivity.this, LoginActivity.class);
+                            startActivity(registerIntent);
+                            finish();
 
                         } else {
                             //로그인 실패
