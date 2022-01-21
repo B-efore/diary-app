@@ -1,9 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainCalendar">
+    android:backgroundTint="#FFFFFF"
+    android:scrollbarThumbHorizontal="@drawable/menuIcon">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableLayout>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+
+        android:layout_height="65dp"
+        android:background="@color/black">
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="410dp"
+        android:layout_height="398dp"
+        android:backgroundTint="#FFFFFF"
+        android:focusedMonthDateColor="#FFFFFF"
+        android:maxDate="12/31/2100"
+        android:minDate="01/01/2000"
+        android:selectedWeekBackgroundColor="#FFFFFF"
+        app:layout_anchor="@+id/tableLayout2"
+        app:layout_anchorGravity="center" />
+
+    <com.google.android.material.appbar.CollapsingToolbarLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:contentScrim="?attr/colorPrimary"
+
+        app:layout_anchor="@+id/tableLayout2"
+        app:layout_anchorGravity="center"
+        app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+        app:toolbarId="@+id/toolbar">
+
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    <ImageButton
+        android:id="@+id/marketIcon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginRight="10dp"
+        android:background="#00000000"
+        android:clickable="true"
+        app:layout_anchor="@+id/appbar"
+        app:layout_anchorGravity="right|center"
+        app:srcCompat="@drawable/marketIcon"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/accountIcon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="10dp"
+        android:background="#00000000"
+        android:clickable="true"
+        app:layout_anchor="@+id/appbar"
+        app:layout_anchorGravity="left|center"
+        app:srcCompat="@drawable/accountIcon"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/swapIcon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginRight="60dp"
+        android:background="#00000000"
+        android:clickable="true"
+        app:layout_anchor="@+id/appbar"
+        app:layout_anchorGravity="right|center"
+        app:srcCompat="@drawable/swapIcon" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="80dp"
+        android:clickable="true"
+        app:backgroundTint="#FFFFFF"
+        app:layout_anchor="@+id/tableLayout2"
+        app:layout_anchorGravity="bottom|right"
+        app:srcCompat="@drawable/menuIcon" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
