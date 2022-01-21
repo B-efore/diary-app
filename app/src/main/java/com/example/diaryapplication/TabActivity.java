@@ -43,7 +43,7 @@ public class TabActivity extends ActivityGroup {
     public void onBackPressed(){
         //super.onBackPressed();
         CustomDialog customDialog = new CustomDialog(TabActivity.this);
-        customDialog.callFunction();
+        customDialog.callFunction("다이어리 작성을 끝내겠습니까?");
     }
 
 }
