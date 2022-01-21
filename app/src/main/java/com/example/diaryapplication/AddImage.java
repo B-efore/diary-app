@@ -13,6 +13,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.InputStream;
 
@@ -38,7 +41,7 @@ public class AddImage extends AppCompatActivity {
         storage=FirebaseStorage.getInstance();
     }
 
-    View.OnClickListener onClickListener = new View.OnClickListener() { //이미지뷰 클릭시 loadAlbum 실행
+    View.OnClickListener onClickListener = new View.OnClickListener() {//이미지뷰 클릭시 loadAlbum 실행
         @Override
         public void onClick(View v) {
             if(v.getId() == R.id.Img)
@@ -59,7 +62,7 @@ public class AddImage extends AppCompatActivity {
         if(requestCode == GALLERY_CODE) {
             Uri file = data.getData();
             StorageReference storageRef = storage.getReference();
-            StorageReference riversRef = storageRef.child(i + ".png");
+            StorageReference riversRef = storageRef.child("photo/" + i + ".png");
             i++;
             UploadTask uploadTask = riversRef.putFile(file);
 
