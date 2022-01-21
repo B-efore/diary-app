@@ -30,31 +30,31 @@ public class EditCheckListActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
 
-        EditText content = findViewById(R.id.투두내용);
-        Button editBtn = findViewById(R.id.editBtn);;
+//        EditText content = findViewById(R.id.투두내용);
+//        Button editBtn = findViewById(R.id.editBtn);
 
 
         //편집 버튼
-        editBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                FirebaseUser firebaseUser = mAuth.getCurrentUser();
-
-                //날짜 받아오기, 아이디 받아올 방법 생각
-                int userDate;
-                String userContent = content.getText().toString();
-
-                UserTodo mUserTodo = new UserTodo();
-//                mUserTodo.setTodoID();
-//                mUserTodo.setDate(userDate);
-                mUserTodo.setContent(userContent);
-                mUserTodo.setCompleted(false);
-
-                //DB에 저장
-                mDatabase.child("users").child(firebaseUser.getUid()).child("todo").setValue(mUserTodo);
-
-            }
-        });
+//        editBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                FirebaseUser firebaseUser = mAuth.getCurrentUser();
+//
+//                //날짜 받아오기, 아이디 받아올 방법 생각
+//                int userDate;
+//                String userContent = content.getText().toString();
+//
+//                UserTodo mUserTodo = new UserTodo();
+////                mUserTodo.setTodoID();
+////                mUserTodo.setDate(userDate);
+//                mUserTodo.setContent(userContent);
+//                mUserTodo.setCompleted(false);
+//
+//                //DB에 저장
+//                mDatabase.child("users").child(firebaseUser.getUid()).child("todo").setValue(mUserTodo);
+//
+//            }
+//        });
     }
 }
