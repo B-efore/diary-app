@@ -34,10 +34,10 @@ public class EditTimeline extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_timeline);
 
-        ed_time = (EditText) findViewById(R.id.ed_time);
-        ed_schedule = (EditText) findViewById(R.id.ed_schedule);
-        btn_add = (Button) findViewById(R.id.btn_add);
-        listView = (ListView) findViewById(R.id.listview);
+//        ed_time = (EditText) findViewById(R.id.ed_time);
+//        ed_schedule = (EditText) findViewById(R.id.ed_schedule);
+//        btn_add = (Button) findViewById(R.id.btn_add);
+//        listView = (ListView) findViewById(R.id.listview);
 
         adapter = new TimelineAdapter(EditTimeline.this);
         listView.setAdapter(adapter);

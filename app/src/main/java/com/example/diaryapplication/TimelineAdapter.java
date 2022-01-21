@@ -49,24 +49,24 @@ public class TimelineAdapter extends BaseAdapter {
         //타임라인에 해당하는 view 생성
         View v = View.inflate(context, R.layout.activity_timeline, null);
         //시간 텍스트 표시하는 view 객체 생성
-        TextView timeText = (TextView) view.findViewById(R.id.time_txt);
-        //일정내용 텍스트 표시하는 view 객체 생성
-        TextView scheduleText = (TextView) view.findViewById(R.id.schedule);
-        //일정 삭제 버튼
-        Button btn_delete = (Button)view.findViewById(R.id.btn_delete);
+//        TextView timeText = (TextView) view.findViewById(R.id.time_txt);
+//        //일정내용 텍스트 표시하는 view 객체 생성
+//        TextView scheduleText = (TextView) view.findViewById(R.id.schedule);
+//        //일정 삭제 버튼
+//        Button btn_delete = (Button)view.findViewById(R.id.btn_delete);
 
         //가져온 데이터를 텍스트 뷰에 저장
-        timeText.setText(timelineList.get(i).getTime());
+//        timeText.setText(timelineList.get(i).getTime());
 //        scheduleText.setText(timelineList.get(i).getSchedule());
 
         //리스트 아이템 삭제
-        btn_delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                timelineList.remove(i);
-                notifyDataSetChanged();
-            }
-        });
+//        btn_delete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                timelineList.remove(i);
+//                notifyDataSetChanged();
+//            }
+//        });
         return view;
     }
 
