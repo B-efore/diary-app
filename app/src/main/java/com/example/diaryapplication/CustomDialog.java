@@ -16,7 +16,7 @@ public class CustomDialog {
         this.context = context;
     }
 
-    public void callFunction() {
+    public void callFunction(String message) {
 
         final Dialog dig = new Dialog(context);
 
@@ -26,8 +26,11 @@ public class CustomDialog {
 
         dig.show();
 
+        final TextView text = (TextView) dig.findViewById(R.id.title);
         final Button okButton = (Button) dig.findViewById(R.id.okButton);
         final Button cancelButton = (Button) dig.findViewById(R.id.cancelButton);
+
+        text.setText(message);
 
         //확인 버튼 이벤트 처리
         okButton.setOnClickListener(new View.OnClickListener() {

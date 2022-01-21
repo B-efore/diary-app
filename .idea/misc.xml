@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/cindy/AndroidStudioProjects/DiaryApplication/app/src/main/res/layout/activity_custom_dialog.xml" value="0.27898550724637683" />
+        <entry key="..\:/Users/cindy/AndroidStudioProjects/DiaryApplication/app/src/main/res/layout/activity_setting.xml" value="0.27807971014492755" />
         <entry key="..\:/Users/cindy/AndroidStudioProjects/DiaryApplication/app/src/main/res/layout/fragment_time_picker.xml" value="0.12407407407407407" />
+        <entry key="..\:/Users/cindy/AndroidStudioProjects/DiaryApplication/app/src/main/res/xml/settings_preference.xml" value="0.27807971014492755" />
       </map>
     </option>
   </component>

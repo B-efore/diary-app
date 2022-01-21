@@ -1,14 +1,14 @@
 package com.example.diaryapplication;
 
-import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainCalendar extends AppCompatActivity {
+import android.os.Bundle;
+
+public class SocialActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_calendar);
+        setContentView(R.layout.activity_social);
     }
 }
