@@ -1,54 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".LoginActivity"
     android:scrollbarThumbHorizontal="@drawable/menuicon">
-
-    <TableLayout
-        android:id="@+id/tableLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </TableLayout>
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
-
         android:layout_height="65dp"
         android:background="@color/black">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp">
+
+        <ImageButton
+            android:id="@+id/marketIcon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+
+            android:background="#00000000"
+            android:clickable="true"
+            app:srcCompat="@drawable/marketicon" />
+
+        <ImageButton
+            android:id="@+id/accountIcon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_toLeftOf="@+id/swapIcon"
+            android:layout_marginRight="15dp"
+            android:background="#00000000"
+            android:clickable="true"
+            app:srcCompat="@drawable/accounticon" />
+
+        <ImageButton
+            android:id="@+id/swapIcon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:background="#00000000"
+            android:clickable="true"
+            app:srcCompat="@drawable/swap"/>
+
+        </RelativeLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <CalendarView
         android:id="@+id/calendarView"
-        android:layout_width="410dp"
+        android:layout_width="match_parent"
         android:layout_height="398dp"
         android:backgroundTint="#FFFFFF"
         android:focusedMonthDateColor="#FFFFFF"
         android:maxDate="12/31/2100"
         android:minDate="01/01/2000"
         android:selectedWeekBackgroundColor="#FFFFFF"
+        android:layout_marginTop="80dp"
         app:layout_anchor="@+id/tableLayout2"
         app:layout_anchorGravity="center" />
 
@@ -56,60 +67,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:contentScrim="?attr/colorPrimary"
-
         app:layout_anchor="@+id/tableLayout2"
         app:layout_anchorGravity="center"
         app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
         app:toolbarId="@+id/toolbar">
-
     </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-    <ImageButton
-        android:id="@+id/marketIcon"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginRight="10dp"
-        android:background="#00000000"
-        android:clickable="true"
-        app:layout_anchor="@+id/appbar"
-        app:layout_anchorGravity="right|center"
-        app:srcCompat="@drawable/marketicon"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <ImageButton
-        android:id="@+id/accountIcon"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginLeft="10dp"
-        android:background="#00000000"
-        android:clickable="true"
-        app:layout_anchor="@+id/appbar"
-        app:layout_anchorGravity="left|center"
-        app:srcCompat="@drawable/accounticon"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <ImageButton
-        android:id="@+id/swapIcon"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginRight="60dp"
-        android:background="#00000000"
-        android:clickable="true"
-        app:layout_anchor="@+id/appbar"
-        app:layout_anchorGravity="right|center"
-        app:srcCompat="@drawable/swap" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="30dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="right"
         android:clickable="true"
         app:backgroundTint="#FFFFFF"
-        app:layout_anchor="@+id/tableLayout2"
-        app:layout_anchorGravity="bottom|right"
         app:srcCompat="@drawable/menuicon" />
 
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

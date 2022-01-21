@@ -27,8 +27,9 @@ import androidx.fragment.app.DialogFragment;
 import java.util.Calendar;
 
 
-public class Setting extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener{
+public class Setting extends AppCompatActivity{
 
+    //implements TimePickerDialog.OnTimeSetListener
 
     @Override
 
