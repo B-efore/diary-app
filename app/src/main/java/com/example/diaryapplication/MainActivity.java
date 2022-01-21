@@ -1,5 +1,12 @@
 package com.example.diaryapplication;
 
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+public class MainActivity extends AppCompatActivity {
+
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 import static android.view.View.INVISIBLE;
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
@@ -63,11 +70,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     SignInButton signBtn;
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 78cfe5f92c1cb2a70fceaaa49682205f71c1e959
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+<<<<<<< HEAD
+
+
+=======
   
+>>>>>>> 78cfe5f92c1cb2a70fceaaa49682205f71c1e959
         signBtn = findViewById(R.id.sign_in_button);
         signBtn.setOnClickListener(this);
 
@@ -170,5 +187,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
                     }
                 });
+
     }
 }

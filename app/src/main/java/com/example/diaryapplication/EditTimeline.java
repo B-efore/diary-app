@@ -1,5 +1,7 @@
 package com.example.diaryapplication;
 
+<<<<<<< HEAD
+=======
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +9,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+>>>>>>> 78cfe5f92c1cb2a70fceaaa49682205f71c1e959
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -28,6 +31,12 @@ public class EditTimeline extends Activity {
     private Button btn_add;
 
 
+<<<<<<< HEAD
+import androidx.appcompat.app.AppCompatActivity;
+
+public class EditTimeline extends AppCompatActivity {
+=======
+>>>>>>> 78cfe5f92c1cb2a70fceaaa49682205f71c1e959
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

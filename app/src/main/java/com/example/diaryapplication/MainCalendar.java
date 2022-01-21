@@ -1,9 +1,8 @@
 package com.example.diaryapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainCalendar extends AppCompatActivity {
 

@@ -1,5 +1,12 @@
 package com.example.diaryapplication;
 
+<<<<<<< HEAD
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class SimpleCalendar extends AppCompatActivity {
+=======
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -18,6 +25,7 @@ public class SimpleCalendar extends AppCompatActivity  {
     private FirebaseUser firebaseUser;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

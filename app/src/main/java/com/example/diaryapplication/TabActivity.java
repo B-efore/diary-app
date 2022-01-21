@@ -1,7 +1,5 @@
 package com.example.diaryapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ActivityGroup;
 import android.content.Intent;
 import android.os.Bundle;

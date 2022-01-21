@@ -1,8 +1,8 @@
 package com.example.diaryapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class DetailCalendar extends AppCompatActivity {
 
