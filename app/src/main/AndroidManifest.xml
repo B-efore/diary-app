@@ -41,6 +41,9 @@
             android:name=".Setting"
             android:exported="false" />
         <activity
+            android:name=".SettingInfo"
+            android:exported="false"/>
+        <activity
             android:name=".EditTimeline"
             android:exported="false" />
         <activity
