@@ -74,6 +74,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 finish();
             }
-        }, 2500);
+        }, 100);
     }
 }
