@@ -35,6 +35,10 @@ public class NotificationHelper extends ContextWrapper {
 
         builder.setAutoCancel(true);
         builder.setContentIntent(pendingIntent);//알림 클릭하면 MainActivity화면으로 이동
+
+        builder.setContentTitle("알림 제목")
+                .setContentText("알림 내용")
+                .setSmallIcon(android.R.drawable.ic_menu_view);
     }
 
 

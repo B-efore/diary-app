@@ -1,5 +1,6 @@
 package com.example.diaryapplication;
 
+import android.app.Notification;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +15,8 @@ public class AlertReceiver extends BroadcastReceiver {
         NotificationHelper notificationHelper = new NotificationHelper(context);
         NotificationCompat.Builder nb = notificationHelper.getChannelNotification();
         notificationHelper.getManager().notify(1,nb.build());
+        Notification notification = nb.build();
+        notification.defaults |= Notification.DEFAULT_VIBRATE;
     }
 
 }

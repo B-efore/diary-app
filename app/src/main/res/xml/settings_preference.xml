@@ -43,7 +43,8 @@
         <Preference
             android:key="al"
             android:title="알림 시간 설정"
-            android:dependency="alarm"/>
+            android:dependency="alarm"
+            />
 
     </PreferenceCategory>
 
