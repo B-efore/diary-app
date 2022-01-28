@@ -97,7 +97,7 @@
         android:clickable="true"
         app:layout_anchor="@+id/appbar"
         app:layout_anchorGravity="right|center"
-        app:srcCompat="@drawable/swap" />
+        app:srcCompat="@drawable/swapicon" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"

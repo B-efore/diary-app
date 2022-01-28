@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/swapIcon"
-        android:icon="@drawable/swap"
+        android:icon="@drawable/swapicon"
         android:title="swap"
         app:showAsAction="ifRoom" />
 

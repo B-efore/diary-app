@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:backgroundTint="#FFFFFF"
-        android:scrollbarThumbHorizontal="@drawable/menuIcon">
+        android:scrollbarThumbHorizontal="@drawable/menuicon">
 
         <TableLayout
             android:id="@+id/tableLayout2"
@@ -67,7 +67,7 @@
             android:clickable="true"
             app:layout_anchor="@+id/appbar"
             app:layout_anchorGravity="right|center"
-            app:srcCompat="@drawable/marketIcon"
+            app:srcCompat="@drawable/marketicon"
             tools:ignore="TouchTargetSizeCheck" />
 
         <ImageButton
@@ -79,7 +79,7 @@
             android:clickable="true"
             app:layout_anchor="@+id/appbar"
             app:layout_anchorGravity="left|center"
-            app:srcCompat="@drawable/accountIcon"
+            app:srcCompat="@drawable/accounticon"
             tools:ignore="TouchTargetSizeCheck" />
 
         <ImageButton
