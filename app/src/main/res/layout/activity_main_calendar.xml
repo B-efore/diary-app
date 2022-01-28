@@ -89,7 +89,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <ImageButton
-        android:id="@+id/swapIcon"
+        android:id="@+id/swapicon"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginRight="60dp"
@@ -97,7 +97,7 @@
         android:clickable="true"
         app:layout_anchor="@+id/appbar"
         app:layout_anchorGravity="right|center"
-        app:srcCompat="@drawable/swapIcon" />
+        app:srcCompat="@drawable/swapicon" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
@@ -105,8 +105,9 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="80dp"
+        app:tint="@android:color/white"
         android:clickable="true"
-        app:backgroundTint="#FFFFFF"
+        app:backgroundTint="@color/black"
         app:layout_anchor="@+id/tableLayout2"
         app:layout_anchorGravity="bottom|right"
         app:srcCompat="@drawable/menuIcon" />
