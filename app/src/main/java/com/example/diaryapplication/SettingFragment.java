@@ -38,17 +38,15 @@ public class SettingFragment extends PreferenceFragment {
 
         prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
-        private void setTheme () {
+        //private void setTheme(){
 
-            if (themePreference.getString("theme", "테마 1").equals("th1")) {
+           // if (themePreference.getString("theme", "테마 1").equals("th1")) {
 
-                setTheme(R.style.AppTheme1);
-            } else {
-                setTheme(R.style.AppTheme2);
-            }
+            //    setTheme(R.style.AppTheme1);
+            //} else {
+            //    setTheme(R.style.AppTheme2);
+           // }
 
-
-            prefs.registerOnSharedPreferenceChangeListener(prefListener);
 
 
             SharedPreferences.OnSharedPreferenceChangeListener prefListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
@@ -78,4 +76,4 @@ public class SettingFragment extends PreferenceFragment {
         }
     }
 
-}
+

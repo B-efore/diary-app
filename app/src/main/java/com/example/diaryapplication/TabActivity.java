@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TabHost;
 
+import com.example.diaryapplication.dialog.CustomDialog;
+
 public class TabActivity extends ActivityGroup {
 
     @Override
