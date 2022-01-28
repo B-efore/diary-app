@@ -3,7 +3,7 @@ package com.example.diaryapplication.database;
 public class UserTodo {
 
 //    private int todoID;
-    private int date;
+    private String date;
     private String content;
     private boolean completed;
 
@@ -15,11 +15,12 @@ public class UserTodo {
 //        this.todoID = todoID;
 //    }
 
-    public int getDate() {
+
+    public String getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

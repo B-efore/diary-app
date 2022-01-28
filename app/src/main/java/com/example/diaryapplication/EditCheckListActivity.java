@@ -1,8 +1,11 @@
 package com.example.diaryapplication;
 
+
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,11 +18,12 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class EditCheckListActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,31 +34,33 @@ public class EditCheckListActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
 
-        EditText content = findViewById(R.id.투두내용);
-        Button editBtn = findViewById(R.id.editBtn);;
-
-
-        //편집 버튼
-        editBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                FirebaseUser firebaseUser = mAuth.getCurrentUser();
-
-                //날짜 받아오기, 아이디 받아올 방법 생각
-                int userDate;
-                String userContent = content.getText().toString();
-
-                UserTodo mUserTodo = new UserTodo();
-//                mUserTodo.setTodoID();
+//        EditText content = findViewById(R.id.투두내용);
+//        Button editBtn = findViewById(R.id.editBtn);
+//
+//        Intent getDate = getIntent();
+//
+//
+//        //편집 버튼
+//        editBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                FirebaseUser firebaseUser = mAuth.getCurrentUser();
+//
+//                //날짜 받아오기, 아이디 받아올 방법 생각
+//                String userDate = getDate.getStringExtra("Date");
+//                String userContent = content.getText().toString();
+//
+//                UserTodo mUserTodo = new UserTodo();
+////                mUserTodo.setTodoID();
 //                mUserTodo.setDate(userDate);
-                mUserTodo.setContent(userContent);
-                mUserTodo.setCompleted(false);
-
-                //DB에 저장
-                mDatabase.child("users").child(firebaseUser.getUid()).child("todo").setValue(mUserTodo);
-
-            }
-        });
+//                mUserTodo.setContent(userContent);
+//                mUserTodo.setCompleted(false);
+//
+//                //DB에 저장
+//                mDatabase.child("users").child(firebaseUser.getUid()).child("todo").setValue(mUserTodo);
+//
+//            }
+//        });
     }
 }

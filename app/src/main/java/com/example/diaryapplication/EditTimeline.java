@@ -43,18 +43,16 @@ public class EditTimeline extends Activity {
         listView.setAdapter(adapter);
 
         //일정 추가하기
-        btn_add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                adapter.addData(ed_time.getText().toString(), ed_schedule.getText().toString());
-                ed_time.setText("");
-                ed_schedule.setText("");
-
-                adapter.notifyDataSetChanged();
-            }
-        });
+//        btn_add.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                adapter.addData(ed_time.getText().toString(), ed_schedule.getText().toString());
+//                ed_time.setText("");
+//                ed_schedule.setText("");
+//
+//                adapter.notifyDataSetChanged();
+//            }
+//        });
     }
-
-
 
 }
