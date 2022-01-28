@@ -25,7 +25,6 @@ public class EditTimeline extends Activity implements View.OnClickListener{
 
 
     private ListView listView2;
-   // private TimelineAdapter adapter;
 
     private EditText ed_time;
     private EditText ed_schedule;
@@ -44,7 +43,7 @@ public class EditTimeline extends Activity implements View.OnClickListener{
 
         btn_add.setOnClickListener(this);
 
-        listView2 = (ListView)  findViewById(R.id.listView2);
+        listView2 = (ListView) findViewById(R.id.listView2);
         listView2.setAdapter(adapter);
 
     }
