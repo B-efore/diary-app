@@ -1,5 +1,8 @@
 package com.example.diaryapplication;
 
+import static com.example.diaryapplication.TimelineActivity.adapter;
+import static com.example.diaryapplication.TimelineActivity.listView;
+
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,10 +21,11 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EditTimeline extends Activity {
+public class EditTimeline extends Activity implements View.OnClickListener{
 
-    private ListView listView;
-    private TimelineAdapter adapter;
+
+    private ListView listView2;
+   // private TimelineAdapter adapter;
 
     private EditText ed_time;
     private EditText ed_schedule;
@@ -34,25 +38,27 @@ public class EditTimeline extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_timeline);
 
-//        ed_time = (EditText) findViewById(R.id.ed_time);
-//        ed_schedule = (EditText) findViewById(R.id.ed_schedule);
-//        btn_add = (Button) findViewById(R.id.btn_add);
-//        listView = (ListView) findViewById(R.id.listview);
+        ed_time = (EditText) findViewById(R.id.ed_time);
+        ed_schedule = (EditText) findViewById(R.id.ed_schedule);
+        btn_add = (Button) findViewById(R.id.btn_add);
 
-        adapter = new TimelineAdapter(EditTimeline.this);
-        listView.setAdapter(adapter);
+        btn_add.setOnClickListener(this);
 
-        //일정 추가하기
-//        btn_add.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                adapter.addData(ed_time.getText().toString(), ed_schedule.getText().toString());
-//                ed_time.setText("");
-//                ed_schedule.setText("");
-//
-//                adapter.notifyDataSetChanged();
-//            }
-//        });
+        listView2 = (ListView)  findViewById(R.id.listView2);
+        listView2.setAdapter(adapter);
+
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_add:
+                adapter.addData(ed_time.getText().toString(), ed_schedule.getText().toString());
+                ed_time.setText("");
+                ed_schedule.setText("");
+
+                adapter.notifyDataSetChanged();
+                break;
+        }
+    }
 }
