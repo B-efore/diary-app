@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.diaryapplication" >
+    package="com.example.diaryapplication">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
     <application
         android:allowBackup="true"
@@ -8,7 +11,24 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DiaryApplication" >
+        android:theme="@style/Theme.DiaryApplication">
+        <activity
+            android:name=".dialog.CustomDialog2"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@menu/top_app_bar" />
+
+        <activity
+            android:name=".SocialActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TabActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
         <activity
             android:name=".SimpleCalendar"
             android:exported="false" />
@@ -31,6 +51,9 @@
             android:name=".Setting"
             android:exported="false" />
         <activity
+            android:name=".SettingInfo"
+            android:exported="false" />
+        <activity
             android:name=".EditTimeline"
             android:exported="false" />
         <activity
@@ -38,13 +61,15 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".AlertReceiver" />
     </application>
 
 </manifest>
