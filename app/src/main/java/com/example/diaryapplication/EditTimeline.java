@@ -17,12 +17,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TimePicker;
+
+import com.example.diaryapplication.database.UserTimeline;
+import com.example.diaryapplication.database.UserTodo;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class EditTimeline extends Activity implements View.OnClickListener{
 
+    private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
 
     private ListView listView2;
 
@@ -34,6 +44,10 @@ public class EditTimeline extends Activity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_timeline);
+
+        //파이어베이스 데이터베이스 사용
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
 
         ed_time = (EditText) findViewById(R.id.ed_time);
         ed_schedule = (EditText) findViewById(R.id.ed_schedule);
@@ -53,6 +67,18 @@ public class EditTimeline extends Activity implements View.OnClickListener{
                 adapter.addData(ed_time.getText().toString(), ed_schedule.getText().toString());
                 ed_time.setText("");
                 ed_schedule.setText("");
+
+                FirebaseUser firebaseUser = mAuth.getCurrentUser();
+                UserTimeline userTimeline = new UserTimeline();
+
+                String mUserID = mDatabase.push().getKey();
+
+                //날짜 받아오기, TimePicker 자리에 timepicker 객체 만들어서 넣기
+                userTimeline.settID(mUserID);
+//                userTimeline.settDate();
+                userTimeline.settContent(ed_schedule.getText().toString());
+//                userTimeline.settHour(TimePicker.getCurrentHour());
+//                userTimeline.settMin(TimePicker.getCurrentMinute());
 
                 adapter.notifyDataSetChanged();
                 break;

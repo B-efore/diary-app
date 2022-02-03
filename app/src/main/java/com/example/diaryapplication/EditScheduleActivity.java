@@ -185,7 +185,7 @@ public class EditScheduleActivity extends AppCompatActivity{
                 }
 
                 //DB에 저장
-                mDatabase.child("users").child(firebaseUser.getUid()).child("todo").child(mUserID).setValue(mUserTodo);
+                mDatabase.child("users").child(firebaseUser.getUid()).child("memo").child(mUserID).setValue(mUserTodo);
                 finish();
             }
         });
