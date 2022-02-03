@@ -1,145 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditScheduleActivity">
+    android:scrollbarThumbHorizontal="@drawable/menuicon">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-
-
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:backgroundTint="#FFFFFF"
-        android:scrollbarThumbHorizontal="@drawable/menuicon">
-
-        <TableLayout
-            android:id="@+id/tableLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical" />
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </TableLayout>
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appbar"
-            android:layout_width="match_parent"
-
-            android:layout_height="65dp"
-            android:background="@color/black">
-
-        </com.google.android.material.appbar.AppBarLayout>
+        android:background="#FFFF">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            app:layout_anchor="@+id/tableLayout2"
-            app:layout_anchorGravity="center"
-            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
-            app:toolbarId="@+id/toolbar">
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:backgroundTint="@color/black"
+                app:layout_collapseMode="pin"
+                app:menu="@menu/top_app_bar_no_icon"
+                app:navigationIcon="@drawable/ic_baseline_favorite_24"
+                app:navigationIconTint="@color/white"
+                app:title="" />
+
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
-        <ImageButton
-            android:id="@+id/marketIcon"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginRight="10dp"
-            android:background="#00000000"
-            android:clickable="true"
-            app:layout_anchor="@+id/appbar"
-            app:layout_anchorGravity="right|center"
-            app:srcCompat="@drawable/marketicon"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <ImageButton
-            android:id="@+id/accountIcon"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="10dp"
-            android:background="#00000000"
-            android:clickable="true"
-            app:layout_anchor="@+id/appbar"
-            app:layout_anchorGravity="left|center"
-            app:srcCompat="@drawable/accounticon"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <ImageButton
-            android:id="@+id/swapicon"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginRight="60dp"
-            android:background="#00000000"
-            android:clickable="true"
-            app:layout_anchor="@+id/appbar"
-            app:layout_anchorGravity="right|center"
-            app:srcCompat="@drawable/swapicon" />
-
-        <EditText
-            android:id="@+id/editTextDate2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="date"
-            app:layout_anchor="@+id/tableLayout2"
-            app:layout_anchorGravity="center|top"
-            android:layout_marginTop="75dp" />
-
-        <Switch
-            android:id="@+id/switch2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_anchor="@+id/tableLayout2"
-            app:layout_anchorGravity="bottom|center" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/content_text"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:text="시간"
-            app:layout_anchor="@+id/tableLayout2"
-            app:layout_anchorGravity="start|center" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:layout_marginLeft="25dp"
+            android:text="일정 내용"
+            android:textColor="@color/deep_gray"/>
 
         <EditText
-            android:id="@+id/editTextTime"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="time"
-            app:layout_anchor="@+id/tableLayout2"
-            app:layout_anchorGravity="end|center" />
+            android:id="@id/content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/content_text"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="25dp"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp"
+            android:hint="일정을 입력하세요."
+            android:textColorHint="@color/deep_gray"
+            android:textSize="14dp"
+            android:background="@drawable/round_button" />
 
-        <Button
-            android:id="@+id/button"
+        <TextView
+            android:id="@+id/date_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="25dp"
+            android:text="기간 선택"
+            android:textColor="@color/deep_gray"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/date_text"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round_button"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp"
+            android:text="날짜를 선택하세요."
+            android:textColor="@color/deep_gray"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/alarm_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/date"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"
+            android:text="알림 선택"
+            android:textColor="@color/deep_gray"/>
+
+        <Switch
+            android:id="@+id/alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/alarm_text"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/alarm_text"
+            android:trackTint="@color/black" />
+
+        <TimePicker
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alarm"
+            android:timePickerMode="spinner"
+            android:visibility="gone"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/add_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/time"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/round_button"
             android:text="확인"
-            app:layout_anchor="@+id/tableLayout2"
-            app:layout_anchorGravity="end|bottom"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="80dp"
-            app:tint="@android:color/white"
-            android:clickable="true"
-            app:backgroundTint="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:enabled="false"/>
 
+    </RelativeLayout>
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

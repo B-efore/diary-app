@@ -30,8 +30,6 @@ public class EditTimeline extends Activity implements View.OnClickListener{
     private EditText ed_schedule;
     private Button btn_add;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

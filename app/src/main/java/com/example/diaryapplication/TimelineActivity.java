@@ -69,10 +69,6 @@ public class TimelineActivity extends Activity implements View.OnClickListener{
         }
 
     }
-
-
-
-
 }
 
 

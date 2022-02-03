@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.diaryapplication.dialog.CustomDialog;
 import com.example.diaryapplication.dialog.CustomDialog2;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -22,10 +23,11 @@ public class MainCalendar extends AppCompatActivity implements View.OnClickListe
 
     MaterialToolbar toolBar;
 
+    FloatingActionButton editBtn;
+
     CalendarView calendarView;
     Calendar calendar;
     Date date;
-
     String userDate;
 
     @Override
@@ -33,8 +35,8 @@ public class MainCalendar extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_calendar);
 
+        editBtn = findViewById(R.id.edit_btn);
         calendarView = findViewById(R.id.calendarView);
-
         toolBar = findViewById(R.id.toolbar);
 
         calendar = Calendar.getInstance();
@@ -51,10 +53,9 @@ public class MainCalendar extends AppCompatActivity implements View.OnClickListe
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().setHomeAsUpIndicator(R.drawable.accounticon);
 
-        출처: https://eskeptor.tistory.com/61 [Hello World]
-
         Log.d("Date", "현재 날짜: " + userDate);
 
+        //날짜 변경시 한번 더 클릭해야 디테일 캘린더로 들어가도록 함
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
@@ -71,6 +72,13 @@ public class MainCalendar extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        //편집 버튼
+        editBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainCalendar.this, EditScheduleActivity.class));
+            }
+        });
     }
 
     @Override

@@ -32,9 +32,19 @@ public class CustomDialog2 extends AppCompatActivity {
         dig.show();
 
         final TextView text = (TextView) dig.findViewById(R.id.title);
+        final Button okButton = (Button) dig.findViewById(R.id.okButton);
         final Button cancelButton = (Button) dig.findViewById(R.id.cancelButton);
 
         text.setText(message);
+
+        //확인 버튼 이벤트 처리
+        okButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dig.dismiss();
+                android.os.Process.killProcess(android.os.Process.myPid());
+            }
+        });
 
         //취소 버튼 이벤트 처리
         cancelButton.setOnClickListener(new View.OnClickListener() {
